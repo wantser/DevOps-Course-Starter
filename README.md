@@ -50,3 +50,20 @@ You should see output similar to the following:
  * Debugger PIN: 226-556-590
 ```
 Now visit [`http://localhost:5000/`](http://localhost:5000/) in your web browser to view the app.
+
+## MODULE 5
+
+Dockerfile contains updates for multi-stage - dev runs with flask using development build
+
+"docker build -f Dockerfile --target development --tag todo-app:dev ." (note that "-f Dockerfile" not strictly required)
+
+and a local mount using the following command once image build
+
+"docker run -p 5000:5000 --env-file .env --mount type=bind,source="$(pwd)"/todo_app,target=/app/todo_app todo-app:dev" 
+
+Production Image uses Green Unicorn and built using "production" stage
+"docker build -f Dockerfile --target production --tag todo-app:prod ." (note that "-f Dockerfile" not strictly required)
+
+No local mount is used as files copied to image as used instead
+
+"docker run -p 5000:5000 --env-file .env todo-app:prod"
