@@ -75,7 +75,7 @@ def index():
     myboards = myTrello()
     myboards.get_trello_boards_name_and_ref()
     boards = list(myboards.get_my_board_info().keys())
-    return render_template('Index.html', boards=boards)
+    return render_template('index.html', boards=boards)
 
 @app.route('/board/<board_name>', methods=['POST', 'GET', 'PUT'])
 def go_to_board_tasks(board_name):
