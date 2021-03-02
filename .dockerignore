@@ -1,0 +1,18 @@
+Live Share/
+.git/
+.vagrant/
+todo_app/__pycache__/
+/todo_app.egg-info/
+data/
+Vagrantfile*
+todo_app/test sections.py
+requirements.txt
+.gitignore
+Original_Vagrant_File
+Dockerfile
+Dockerfile2
+To-do-GU1.dockerfile
+todo_app/__init__.py
+todo_app/gunicorn_config.py
+.env
+.env.template
