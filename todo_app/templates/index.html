@@ -1,19 +1,29 @@
 {% extends "layout.html" %}
-{% block title %}To-Do App{% endblock %}
+{% block title %}Andy's To-Do App{% endblock %}
 
 {% block content %}
   <div class="jumbotron">
-    <h1 class="display-4">To-Do App</h1>
+    <h1 class="display-4">Andy's To-Do App</h1>
     <p class="lead">Just another to-do app.</p>
   </div>
 
   <div class="row">
     <div class="col-md-12">
-      <h2>Items</h2>
+      <h2>Your Boards</h2>
       <ul class="list-group mb-4">
-		{% for item in items %}
-			<li>{{ item.id }} - {{ item.title }} - {{ item.status }}</li>
-		{% endfor %}
+    {% for board in boards %}
+          <form action="/board/{{ board }} " method="get">
+          <li><b> {{ board }} </b>   <button type="submit"> Click here for - <b> {{ board }} </b>- Task List </button></li>
+        </form>
+    {% endfor %}
+      </ul>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-md-12">
+      <h2>Create</h2>
+      <button type="button">Create New Board</button></li>    
       </ul>
     </div>
   </div>

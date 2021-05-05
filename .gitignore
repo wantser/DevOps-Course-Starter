@@ -115,9 +115,15 @@ dmypy.json
 ### Virtual environment ###
 env/
 .venv/
+.venv.old/
 
 ### Configuration files ###
 .env
 
-### test files ###
+
+### excluded files ###
 test.py
+Trello_API_Keys.txt
+
+##Vagrant###
+.vagrant/
